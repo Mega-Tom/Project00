@@ -9,9 +9,17 @@ NOTE: Comment your code, and verify it works for "breaking cases" i.e. 0! = 1.
 * Factorial Code
 ** Code
 #+BEGIN_SRC emacs-lisp
-(+ 2 3 4)
+(defun factorial (n)
+  (* n (factorial (- n 1)))
+)
 #+END_SRC
 ** Test cases
+#+BEGIN_SRC emacs-lisp
+(factorial 3)
+(factorial 5)
+(factorial 10)
+
+#+END_SRC
 ** How big a number will make your computer freeze?
 * "Real-World" function with mapcar
 ** What is mapcar
@@ -22,5 +30,13 @@ NOTE: Comment your code, and verify it works for "breaking cases" i.e. 0! = 1.
 * Loop function
 ** Code
 #+BEGIN_SRC emacs-lisp
-
+(defun range (n)
+  (let ((l nil))
+    (while (> n 0)
+      (cons n l)
+      (setq n (- n 1))
+    )
+    l
+  )
+)
 #+END_SRC

@@ -37,19 +37,54 @@ c. He levitates, he's an alien "HEELLLLLOOOO!"
 
 d. Why do I care about Superman again, he's in the D.C. universe ... so dark and terrible movies!
 
-Contrapositive
+* Contrapositive
+** Define
+The contrapositive of a conditional statment =p -> q= is =~q -> ~p=
+** Example
+If it is snowing, it is cold.
+If it is not cold, it is not snowing.
+** Test question 
+Which of the folowing follows from =~p -> q=?
 
-Converse
+a. =p -> ~q=
+b. =q -> ~p=
+c. =~(p -> ~q)=
+d. =~q -> p=
 
-inverse
+* Converse
+** Define
+The converse of a conditional statment =p -> q= is =q -> p=
+** Example
+If it is snowing, it is cold.
+If it is cold, it is snowing.
 
-R: real numbers
+* inverse
+** Define
+The inverse of a conditional statment =p -> q= is =~p -> ~q=
+** Example
+If it is snowing, it is cold.
+If it is not snowing, it is not cold.
 
-Z: integers
+* R: real numbers
+** Define
+The set of numbers on the number line; can be expressed as an infinite decimals.
+** Examples
+1 = 1.0000... is a member of R
+pi= 3.1415926... is also in R
 
-Q: rational numbers
+* Z: integers
+** Define
+The set of all whole numbers, positive and negitive.
 
-predicate
+* Q: rational numbers
+** Define
+The set of all fractions. For any a, b in R, where b is not 0, a/b is in Q.  
+
+* predicate
+** Define
+A boolean-valued function: that is a mapping from some domain to ={true false}=.
+** Example
+let P(n) be /n is prime/
 
 Domain
 
@@ -88,8 +123,12 @@ p <--> q
 Three dots in a triangle
 
 upside down A
+** Define
+The universal qualifier. Used to state properties of every member of a set.
 
 Backwards E
+** Define
+The existental qualifier. Used to state properties of at least one member of a set.
 
 union
 
@@ -118,6 +157,8 @@ absorption laws
 negations of t and c
 
 vacuously true
+** Define
+A conditional statment is said to be vacuously true if the anticedent is false.
 
 Modus Ponens
 

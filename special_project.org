@@ -7,3 +7,28 @@
 NOTE: You must get this approved by Brother Benning.
 
 * Special Project
+
+#+BEGIN_SRC emacs-lisp :results output
+(defun q_sort (input_list)
+  (let (
+       (split (car input_list)); First element, used as partition
+       (small nil)             ; List for all elements smaller than split
+       (large nil)             ; List for all elements larger than split
+       )
+    (dolist (x (cdr input_list))
+      (if (< split x)
+        (setq large (cons x large))
+        (setq small (cons x small))
+      )
+    )
+     ;Checking the cdr is like checking if the length > 1 
+    (if (cdr small) (setq small (q_sort small)))
+    (if (cdr large) (setq large (q_sort large)))
+     ;Add the split point in the middle
+    (append small (cons split large))
+  )
+)
+
+;Example use:
+(q_sort '(1 23 47 8 92 3 6 7 75 4 32 1))
+#+END_SRC
