@@ -86,84 +86,137 @@ A boolean-valued function: that is a mapping from some domain to ={true false}=.
 ** Example
 let P(n) be /n is prime/
 
-Domain
+* Domain
+** Define
+The set of all valid inputs
 
-CoDomain
+* CoDomain
+** Define
+The set of all valid outputs. Not all are necessarily reachable.
 
-quantifier
+* quantifier
 
-antecedent
+* antecedent
+** Define
+The p in p -> q
 
-consequent
+* consequent
+** Define
+The q in p -> q
 
-Set
+* Set
 
-Fallacy
+* Fallacy
+** Define
+An error in logic
 
+* biconditional
+** Define 
+if and only if
+
+* sufficient condition
+** Define
+A sufficient condition is true only if the result is true.
+iff p -> q, p is a sufficient condition for q.
+
+* necessary condition
+** Define
+A sufficient condition must be met for a result to hold.
+iff p -> q, q is a necessary condition for p.
+
+* ~p
+** define
+not
+
+* p ^ q
+** define
+and
+
+* p V q
+** define
+or
+
+* p XOR q
+** define
+p and  q have difering truth values; one is true but not boath.
+
+* p == q
+** define
+Logicaly eqivelaent
+
+* p -> q
+** define
+conditional: if p then q
+
+* p <--> q
+** define
 biconditional
 
-sufficient condition
+* Three dots in a triangle
 
-necessary condition
-
-~p
-
-p ^ q
-
-p V q
-
-p XOR q
-
-p == q
-
-p -> q
-
-p <--> q
-
-Three dots in a triangle
-
-upside down A
+* upside down A
 ** Define
 The universal qualifier. Used to state properties of every member of a set.
 
-Backwards E
+* Backwards E
 ** Define
 The existental qualifier. Used to state properties of at least one member of a set.
 
-union
+* union
+** Define
+The set of all elements in at least one of the sets set.
 
-intersection
+*intersection
+** Define
+The set of all elements in boath sets.
 
-Commutative laws
+* Commutative laws
+** Define
+Order of opperands matters not. As in:
+A or B == B or A
 
-associative laws
+* associative laws
+** Define
+Perens matter not:
+A and (B and C) == (A and B) and C
 
-distributive laws
+* distributive laws
+** Define
+A or (B and C) == (A or B) and (A or C)
+A and (B or C) == (A and B) or (A and C)
 
-identity laws
+* identity laws
+** Define
+A == A
 
 negation laws
 
-double negative law
 
-idempotent laws
+* double negative law
+** Define
+A == ~(~A)
 
-universal bound laws
+* idempotent laws
 
-De morgan's laws
+* universal bound laws
 
-absorption laws
+* De morgan's laws
 
-negations of t and c
+* absorption laws
 
-vacuously true
+* negations of t and c
+
+* vacuously true
 ** Define
 A conditional statment is said to be vacuously true if the anticedent is false.
 
-Modus Ponens
+* Modus Ponens
 
-Modus Tollens
+* Modus Tollens
 
-Elimination: valid argument form
+* Elimination: valid argument form
 
-Transitivity: Valid Argument form
+* Transitivity: Valid Argument form
+p -> q
+q -> r
+thus p -> r
