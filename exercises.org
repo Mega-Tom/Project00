@@ -36,7 +36,10 @@
 #+END_SRC
 
 ***  Your answer goes here.
-** TODO TEJ
+
+
+
+** DONE TEJ
   A function-as-association between elements of a domain and elements of a
   codomain, for \ldquo{}small\rdquo domains and codomains, inspired so-called \ldquo{}association
   lists\rdquo (or alists) and the =assoc= (and associated) functions.
@@ -71,7 +74,27 @@
   There are several variations of =assoc=. Find and give examples of using them.
 
 *** Your answer goes here.
-** TODO WFK
+
+**** rassoc
+  Takes a value and returns an assocation.
+***** Example
+#+BEGIN_SRC emacs-lisp :results silent
+    (rassoc '(0 0 255)
+                 '(("red" 255 0 0) ("green" 0 255 0) ("blue" 0 0 255)))
+#+END_SRC
+**** alist-get
+   Takes a key and returns only the value. Also, compares using =eq= insted of =equal=.
+***** Example
+#+BEGIN_SRC emacs-lisp :results silent
+ (alist-get :abb
+    '(
+      (:aaa . 1)
+      (:abb . 2)
+      (:abc . 3)))
+#+END_SRC
+
+
+** DONE WFK
   In the function-as-map context, here is another interpretation:
 
   A \ldquo{}map\rdquo type (AKA associative array, AKA hashtable) is found in many
@@ -134,9 +157,12 @@
 
   What happens if you omit the =:test 'equal= parameters to the
   =make-hash-table= call?
-  
+    
 *** Your answer goes here.
-** TODO TER
+    You will have your keys compared using strict equality. For example, two
+ strings with the same letters could be difrent keys.
+
+** DONE TER
   This exercise explores /looping/ versus /mapping/.
 
   What does the =morphify= function defined below do? Think about it, then PVP
@@ -172,7 +198,30 @@
   Explain how this version of =morphify= works.
   
 *** Your answer goes here.
-** TODO TGE
+
+1. =null= is a predicit that checks for an empty list. Same as =not=.
+2. =append= preforms list concatination.
+3. =list= makes a list of all its paramiters.
+4. =funcall= takes a symbol and runs the assosiated function.
+5. =first= is the same as car.
+6. =rest= is the same as cdr.
+
+So the program is basicly just:
+
+#+BEGIN_SRC emacs-lisp :results silent
+  (defun morphifyr (fun lst)
+    (if lst
+      (cons (funcall fun (car lst)) (morphifyr fun (cdr lst)))
+      nil))
+#+END_SRC
+
+This is a basic recersive function that will:
+  apply the function to the first element,
+  map the rest of the list,
+  and join it back together into one list.
+  
+
+** DONE TGE
   Note the difference if -13 is used instead of 13 below:
 #+BEGIN_SRC emacs-lisp :results silent
   (defun compute-floor-the-hard-way (dividend divisor)
@@ -191,12 +240,15 @@
   Is the hard way correct?
   
 *** Your answer goes here.
+
+Almost. It returns a float, while it should return an integer.
+
 ** TODO THP
   Graph the floor and ceiling functions f(x) = \lfloor{}x\rfloor and f(x) = \lceil{}x\rceil for real
   number values of x in the interval [-5.0 .. 5.0].
   
 *** Your answer goes here.
-** TODO WKM
+** DONE WKM
   Which of these statements about floor and ceiling are correct, for any real
   number $x$ and any integers $n$ and $m$?
   1. $x - 1 < \lfloor{}x\rfloor \le x \le \lceil{}x\rceil < x + 1$.
@@ -213,18 +265,22 @@
       0$ as in statement 8).
   
 *** Your answer goes here.
-** TODO TIW
+
+1, 2, 3, 4, 5, 6, 7, 9
+
+** DONE TIW
 
   Define the function \ldquo{}round to nearest integer\rdquo using the floor and ceiling
   functions, together with the \ldquo{}Iverson bracket\rdquo function. (A number whose
   fractional part is less than one-half should be rounded down, otherwise up.)
 
 ***  Your answer goes here.
+ROUND(x) = $\lfloor{}x+.5\rfloor{}$
 ** TODO TKG
   Explore the inverse of =assoc= via the functions =rassoc= and associates.
 
 ***  Your answer goes here.
-** TODO WOV
+** DONE WOV
   Identify the formula or rule that generates the terms of each sequence:
   1. =[7 14 21 28 35 42 49 56 63 70 ...]=
   2. =[7 11 15 19 23 27 31 35 39 43 ...]=
@@ -238,7 +294,18 @@
   10. =[2 3 5 7 11 13 17 19 23 29 ...]=
 
 ***  Your answer goes here.
-** TODO WQW
+1. f(n) = 7n
+2. f(n) = 3+4n
+3. f(n) = (n^2+n)/2-n+3
+4. f(n) = n in binary
+5. f(n) = f(n-1) + f(n-2); f(1)=f(2)=1
+6. f(n) = f(n-1)%2 ? 3*f(n-1) : f(n)/2
+7. f(n) = f(n-1) + f(n-2); f(1)=2; f(2)=1
+8. f(n) = 3*2^n
+9. f(n) = 2*3^n
+10. f(n) = nth prime
+
+** DONE WQW
   Classify the following lisp functions according as each is or is not a predicate:
   | Predicate? | Yes or No? |
   |------------+------------|
@@ -253,3 +320,15 @@
   | =oddp=     |            |
 
 ***  Your answer goes here. (Replicate the above table.)
+
+  | Predicate? | Yes or No? |
+  |------------+------------|
+  | =list=     |     No     |
+  | =listp=    |     Yes    |
+  | =integerp= |     Yes    |
+  | =vector=   |     No     |
+  | =vectorp=  |     Yes    |
+  | =symbolp=  |     Yes    |
+  | =zerop=    |     Yes    |
+  | =evenp=    |     Yes    |
+  | =oddp=     |     Yes    |
